@@ -10,7 +10,6 @@ export default function SearchScreen({ navigation, route }) {
   return (
     <View style={styles.container}>
       <Text>Welcome to Search Screen</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }

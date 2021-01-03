@@ -26,32 +26,27 @@ const CameraComp = function ({type, flip, flash, flahstype, autofocus, focus, wh
   
   
   async function savePicToAlbum() {
-    if(isPicAvailable){
-        try {
+    // if(isPicAvailable){
+    //     try {
           
-            let asset = await MediaLibrary.createAssetAsync(isPicAvailable);
-            let isAlbumPresent = await  MediaLibrary.getAlbumAsync('Expo-Test-App');
-            if(isAlbumPresent && isAlbumPresent.id){
-                let addedAsset = await MediaLibrary.addAssetsToAlbumAsync([asset], isAlbumPresent.id, false);
-                // console.log('addedAsset   :   > ', addedAsset);
-                showSnackToast(snackToastStaticData.assetSavedMessage);
-                // gotoHome();
-            }else if(!isAlbumPresent){
-                let newAlbum = await MediaLibrary.createAlbumAsync('Expo-Test-App', asset, false);
-                // console.log('newAlbum  :  ', newAlbum);
-                showSnackToast(snackToastStaticData.assetSavedMessage);
-                // gotoHome();
-            }  
+    //         let asset = await MediaLibrary.createAssetAsync(isPicAvailable);
+    //         let isAlbumPresent = await  MediaLibrary.getAlbumAsync('Expo-Test-App');
+    //         if(isAlbumPresent && isAlbumPresent.id){
+    //             let addedAsset = await MediaLibrary.addAssetsToAlbumAsync([asset], isAlbumPresent.id, false);
+    //             showSnackToast(snackToastStaticData.assetSavedMessage);
+    //         }else if(!isAlbumPresent){
+    //             let newAlbum = await MediaLibrary.createAlbumAsync('Expo-Test-App', asset, false);
+    //             showSnackToast(snackToastStaticData.assetSavedMessage);
+    //         }  
             
-        } catch (error) {
-            console.log('savePicToAlbum  :  ', error);
-            showSnackToast(snackToastStaticData.assetSavedErrMessage);
-        }        
-    }else{
-        console.log('Sorry, picture not available');
-        showSnackToast(snackToastStaticData.assetNotFound);
-        // gotoHome();
-    }    
+    //     } catch (error) {
+    //         console.log('savePicToAlbum  :  ', error);
+    //         showSnackToast(snackToastStaticData.assetSavedErrMessage);
+    //     }        
+    // }else{
+    //     console.log('Sorry, picture not available');
+    //     showSnackToast(snackToastStaticData.assetNotFound);
+    // }    
   }
 
 

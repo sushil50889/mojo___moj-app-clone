@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Ionicons, AntDesign, MaterialCommunityIcons, Fontisto, EvilIcons, SimpleLineIcons, Entypo, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons, AntDesign, MaterialCommunityIcons, Fontisto, EvilIcons, SimpleLineIcons, Entypo, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 
 
 function showIcon({name, size, color, type}) {

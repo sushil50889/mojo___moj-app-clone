@@ -1,18 +1,47 @@
+// eslint-disable-next-line linebreak-style
 import React, { useState, useEffect, useRef } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Button, Image, ScrollView, BackHandler, Alert, SafeAreaView } from 'react-native';
-import { fonts } from '../../config/static-data/fonts';
+import {
+ StyleSheet, View, BackHandler, Alert, Animated
+} from 'react-native';
 import {connect} from 'react-redux';
-import { windowWidth, windowHeight } from '../../config/static-data/screenWidthHeight';
 import * as Font from 'expo-font';
 import Constants from 'expo-constants';
-import * as Permissions from 'expo-permissions';
-import {statusBarHeight} from '../../config/statusbar/statusbar';
+import { windowHeight } from '../../config/static-data/screenWidthHeight';
+import statusBarHeight from '../../config/statusbar/statusbar';
+import permission from '../../config/permission/device-permissions';
+import { MOJO_VIDEO_POST } from '../../config/static-data/dummyData';
+import Post from '../../components/post';
+const FLATLIST_HEIGHT = windowHeight-windowHeight*0.065;
 
- const HomeScreen = (props) => {
+const HomeScreen = (props) => {
 
-  const { navigation, route, tokenDispatch } = props;
   const [isFontLoaded, setisFontLoaded] = useState(false);
+  const [postslist, setpostslist] = useState(MOJO_VIDEO_POST);
+  const [currentIndex, setcurrentIndex] = useState(0);
+  const scrollY = useRef(new Animated.Value(0)).current;
+
+
+  const setPostForPlay = (newIndex) => {
+    if(newIndex >= 0){
+      let newArr = MOJO_VIDEO_POST.map((item, index)=>{
+        if(index == newIndex){
+          item.play = true;
+          return item;
+        }else{
+          item.play = false;
+          return item;
+        }
+      })
+  
+      if(newArr && newArr.length == MOJO_VIDEO_POST.length){
+        console.log('new array length ', newArr.length);
+        setpostslist(newArr);
+        setcurrentIndex(newIndex);
+      }      
+    }else{
+      // console.log('new index not found');
+    }    
+  }
 
 
   useEffect(()=> {
@@ -26,21 +55,15 @@ import {statusBarHeight} from '../../config/statusbar/statusbar';
     }); 
 
 
-    setTimeout(() => {
-      if (Constants.isDevice) {
-        Permissions.getAsync(Permissions.CAMERA).then(async (camPer) => {
-          if (camPer.status !== 'granted'){
-            Permissions.askAsync(Permissions.CAMERA).then((status) => {
-              if(status.status !== 'granted'){                
-              }else{                
-              }
-            }).catch(err => {              
-            });            
-          }
-        }).catch(err=>{
-          
-        });        
-      }      
+    setTimeout(async () => {
+      // if (Constants.isDevice) {
+      //   let camPer = await permission.getCameraPermission(); 
+      //   if(camPer && camPer.status){
+
+      //   }else{
+
+      //   }
+      // }      
     }, 1000);
 
     const backAction = () => {
@@ -53,7 +76,7 @@ import {statusBarHeight} from '../../config/statusbar/statusbar';
         { text: 'YES', onPress: () => BackHandler.exitApp() },
       ]);
       return true;
-    };
+    }
 
     const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
 
@@ -65,12 +88,45 @@ import {statusBarHeight} from '../../config/statusbar/statusbar';
   
 
   return (
-    <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <Text style={{fontFamily: isFontLoaded ? fonts.epiloguevariable : null, color: '#fff'}}>Welcome to Home Screen</Text>
-        <StatusBar style='light' animated={true} />
+          <Animated.FlatList
+          data={postslist}
+          extraData={currentIndex}
+          renderItem={({item}) => <Post post={item}/>}
+          keyExtractor={(item, index) => item.id}
+          showsVerticalScrollIndicator={false}
+          snapToInterval={FLATLIST_HEIGHT}
+          snapToAlignment={'start'}
+          decelerationRate={'fast'}
+          bounces={false}
+          horizontal={false}
+          pagingEnabled
+          removeClippedSubviews={true}
+          initialScrollIndex={0}
+          onEndReachedThreshold={0.5}
+          getItemLayout={(data, index) => ({
+                length: FLATLIST_HEIGHT,
+                offset: FLATLIST_HEIGHT * index,
+                index,
+          })}
+          onScroll={
+            Animated.event(
+                [{
+                    nativeEvent: {contentOffset: {y: scrollY}}
+                }],
+                {useNativeDriver: false}
+            )
+          }
+          onMomentumScrollEnd={(ev) => {
+            const newIndex = Math.round(ev.nativeEvent.contentOffset.y / FLATLIST_HEIGHT);
+            console.log('scroll ended newIndex  :   ', newIndex);
+            setPostForPlay(newIndex);
+          }}
+          onEndReached={(distanceFromEnd) => {
+            console.log('distanceFromEnd   :   ', distanceFromEnd);
+          }}
+          />
       </View>
-    </SafeAreaView>
   )
 
 }
@@ -87,11 +143,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: statusBarHeight
-  },
-  loginButton: {
-    width: '80%',
-    marginVertical: 4,
   }
 });
 

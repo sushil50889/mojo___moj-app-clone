@@ -17,16 +17,46 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sushil50889.mojo",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to take the photos of different products",
+        "NSLocationAlwaysUsageDescription": "This app uses the location to know the current position for best user experience",
+        "NSLocationWhenInUseUsageDescription": "This app uses the location to know the current position for best user experience"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.sushil50889.mojo",
+      "versionCode": 1,
+      "permissions": ["CAMERA", "INTERNET", "SYSTEM_ALERT_WINDOW"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAvi8izJBiY5SXocu2gM-UH0cVr6LDpGks"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "notification":{
+      "iosDisplayInForeground": true
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "sushilmandi",
+            "project": "mojo",
+            "authToken": "67b806d3f3f149069ad59fb30bf49543e6b333acda94416fa8e4327a607a1de5"
+          }
+        }
+      ]
     }
   }
 }

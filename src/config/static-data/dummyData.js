@@ -1,3 +1,95 @@
+// http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4
+
+export const MOJO_VIDEO_POST = [
+    {
+        id: '1',
+        videoUri: 'https://res.cloudinary.com/sushilmandi/video/upload/v1609606513/demo-video/3_tvkuty.mp4',
+        likes: 121,
+        user: {
+            imageUri: 'https://www.clker.com/cliparts/4/e/4/c/15137280431823543614model-profile-shot.med.png',
+            username: 'username'
+        },
+        comments: '5',
+        shares: '25',
+        description: 'A test caption',
+        song: {
+            name: 'Song Name',
+            imageUri: 'https://webstockreview.net/images/cd-clipart-film-dvd-2.png'
+        },
+        play: true
+    },  
+    {
+        id: '2',
+        videoUri: 'https://res.cloudinary.com/sushilmandi/video/upload/v1609606512/demo-video/1_yzkm16.mp4',
+        likes: 121,
+        user: {
+            imageUri: 'https://www.clker.com/cliparts/4/e/4/c/15137280431823543614model-profile-shot.med.png',
+            username: 'username'
+        },
+        comments: '5',
+        shares: '25',
+        description: 'A test caption',
+        song: {
+            name: 'Song Name',
+            imageUri: 'https://webstockreview.net/images/cd-clipart-film-dvd-2.png'
+        },
+        play: false
+    },  
+    {
+        id: '3',
+        videoUri: 'https://res.cloudinary.com/sushilmandi/video/upload/v1609606510/demo-video/5_slwqb8.mp4',
+        likes: 121,
+        user: {
+            imageUri: 'https://www.clker.com/cliparts/4/e/4/c/15137280431823543614model-profile-shot.med.png',
+            username: 'username'
+        },
+        comments: '5',
+        shares: '25',
+        description: 'A test caption',
+        song: {
+            name: 'Song Name',
+            imageUri: 'https://webstockreview.net/images/cd-clipart-film-dvd-2.png'
+        },
+        play: false
+    },  
+    {
+        id: '4',
+        videoUri: 'https://res.cloudinary.com/sushilmandi/video/upload/v1609606509/demo-video/4_qbxney.mp4',
+        likes: 121,
+        user: {
+            imageUri: 'https://www.clker.com/cliparts/4/e/4/c/15137280431823543614model-profile-shot.med.png',
+            username: 'username'
+        },
+        comments: '5',
+        shares: '25',
+        description: 'A test caption',
+        song: {
+            name: 'Song Name',
+            imageUri: 'https://webstockreview.net/images/cd-clipart-film-dvd-2.png'
+        },
+        play: false
+    },  
+    {
+        id: '5',
+        videoUri: 'https://res.cloudinary.com/sushilmandi/video/upload/v1609606509/demo-video/2_umzuw3.mp4',
+        likes: 121,
+        user: {
+            imageUri: 'https://www.clker.com/cliparts/4/e/4/c/15137280431823543614model-profile-shot.med.png',
+            username: 'username'
+        },
+        comments: '5',
+        shares: '25',
+        description: 'A Test caption',
+        song: {
+            name: 'Song Name',
+            imageUri: 'https://webstockreview.net/images/cd-clipart-film-dvd-2.png'
+        },
+        play: false
+    },  
+];
+
+
+
 export const sliderData = [
     {
         id: '1',

@@ -85,7 +85,6 @@ const LoginScreen = function (props) {
           </View>
         )}
         </Formik>        
-        <StatusBar style="light"/>
       </View>
     </TouchableWithoutFeedback>
   )

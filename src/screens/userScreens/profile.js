@@ -10,7 +10,6 @@ export default function ProfileScreen({ navigation, route }) {
   return (
     <View style={styles.container}>
       <Text>Welcome to Profile Screen</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }

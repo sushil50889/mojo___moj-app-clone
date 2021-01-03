@@ -6,7 +6,6 @@ export default function ForgotPassScreen() {
   return (
     <View style={styles.container}>
       <Text>Welcome to Forgot Pass Screen</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }

@@ -10,7 +10,6 @@ export default function NotificationScreen({ navigation, route }) {
   return (
     <View style={styles.container}>
       <Text>Welcome to Notification Screen</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
