@@ -13,7 +13,10 @@ const Post = (props) => {
 
 
   const onPlayPausePress = async () => {
-    // setPost({...props.post, play: !props.playvideo});
+    let status = await videoRef.current.getStatusAsync();
+    if(status){
+      status.isPlaying ? videoRef.current.pauseAsync() : videoRef.current.playAsync();
+    }    
   }
 
 
@@ -60,7 +63,7 @@ const Post = (props) => {
               </View>
 
               <View style={styles.iconContainer}>
-                <Fontisto name={'share-a'} size={35} color="white" />
+                <Fontisto name={'share-a'} size={33} color="white" />
                 <Text style={styles.statsLabel}>{post.shares}</Text>
               </View>
             </View>
@@ -73,7 +76,7 @@ const Post = (props) => {
                 <Text style={[styles.description, {fontSize: 12, fontWeight: 'bold', marginBottom: 6}]}>#india #funny #stylish</Text>
 
                 <View style={styles.songRow}>
-                  <Entypo name={'beamed-note'} size={24} color="white" />
+                  <Entypo name={'beamed-note'} size={18} color="white" />
                   <Text style={styles.songName}>{post.song.name}</Text>
                 </View>
               </View>

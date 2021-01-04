@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: windowWidth,
     height: windowHeight-windowHeight*0.065,
-    backgroundColor: 'green'
+    // backgroundColor: 'green'
   },
   videPlayButton: {
     position: 'absolute',
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   songName: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 13,
     marginLeft: 5,
   },
 
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderWidth: 2,
     borderColor: '#fff',
+    marginBottom: windowHeight*0.012
   },
 
   iconContainer: {
