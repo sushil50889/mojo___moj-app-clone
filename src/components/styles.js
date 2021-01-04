@@ -26,6 +26,15 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight-windowHeight*0.065,
     justifyContent: 'flex-end',
+    // backgroundColor: 'green'
+  },
+  playBtn: {
+    position: 'absolute',
+    // flex: 1,
+    width: windowWidth,
+    height: windowHeight-windowHeight*0.065,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   bottomContainer: {
     padding: 10,
@@ -54,7 +63,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginLeft: 5,
   },
-
   songImage: {
     width: 50,
     height: 50,
@@ -62,7 +70,6 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     borderColor: '#4c4c4c',
   },
-
   //  right container
   rightContainer: {
     alignSelf: 'flex-end',
@@ -77,9 +84,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderWidth: 2,
     borderColor: '#fff',
-    marginBottom: windowHeight*0.012
+    marginBottom: -windowHeight*0.019
   },
-
   iconContainer: {
     alignItems: 'center',
   },
