@@ -14,21 +14,23 @@ const Post = (props) => {
 
 
   useEffect(()=>{
-    // setisPlay(true);
-    // setTimeout(()=>{
-      isPlayButtonShow();
-    // }, 1000)    
+    isPlayButtonShow();
+
+    // return () => {
+    //   backHandler.remove();
+    //   stopPlayAllVideo();
+    // }   
   }, [props.post.play])
 
 
   const onPlayPausePress = async () => {
     let status = await videoRef.current.getStatusAsync();
     if(status){
-      if(status.isPlaying) { 
+      if(status.isPlaying) {
         videoRef.current.pauseAsync();
         props.post.play = false;
         setisPlay(false);
-      } else{
+      }else{
         videoRef.current.playAsync();
         props.post.play = true;
         setisPlay(true);

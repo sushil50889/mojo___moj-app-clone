@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import {setLoggedInStatus, setUserData, setPushToken, setDestinationLocation, setOriginLocation} from '../actions/types';
+import { MOJO_VIDEO_POST } from "../../static-data/dummyData";
+import {setLoggedInStatus, setUserData, setPushToken, setDestinationLocation, setOriginLocation, setPostsList} from '../actions/types';
 
 const initialState = {
     userData: {},
@@ -7,6 +8,7 @@ const initialState = {
     pushtoken: null,
     destLocation: null,
     originLocation: null,
+    postsList: MOJO_VIDEO_POST,
 }
 
 
@@ -22,6 +24,8 @@ const indexReducer = (state = initialState, action) => {
             return {...state, destLocation: action.payload}
         case setOriginLocation:
             return {...state, originLocation: action.payload}
+        case setPostsList:
+            return {...state, postsList: action.payload}
         default:
             return state
     }

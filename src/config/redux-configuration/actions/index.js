@@ -1,4 +1,4 @@
-import {setLoggedInStatus, setUserData, setPushToken, setDestinationLocation, setOriginLocation} from './types';
+import {setLoggedInStatus, setUserData, setPushToken, setDestinationLocation, setOriginLocation, setPostsList} from './types';
 
 // export const increment = (payload) => {
 //     return {
@@ -45,6 +45,13 @@ export const setDestinationLocationData = (payload) => {
 export const setOriginLocationData = (payload) => {
     return {
         type: setOriginLocation,
+        payload,
+    }
+}
+
+export const setPostsListData = (payload) => {
+    return {
+        type: setPostsList,
         payload,
     }
 }

@@ -11,40 +11,21 @@ import statusBarHeight from '../../config/statusbar/statusbar';
 import permission from '../../config/permission/device-permissions';
 import { MOJO_VIDEO_POST } from '../../config/static-data/dummyData';
 import Post from '../../components/post';
+import { setPushTokenData, setPostsListData } from '../../config/redux-configuration/actions';
 const FLATLIST_HEIGHT = windowHeight-windowHeight*0.065;
+
 
 const HomeScreen = (props) => {
 
+  const {postslist, postDispatch} = props;
   const [isFontLoaded, setisFontLoaded] = useState(false);
-  const [postslist, setpostslist] = useState(MOJO_VIDEO_POST);
   const [currentIndex, setcurrentIndex] = useState(0);
   const scrollY = useRef(new Animated.Value(0)).current;
 
 
-  const setPostForPlay = (newIndex) => {
-    if(newIndex >= 0){
-      let newArr = MOJO_VIDEO_POST.map((item, index)=>{
-        if(index == newIndex){
-          item.play = true;
-          return item;
-        }else{
-          item.play = false;
-          return item;
-        }
-      })
-  
-      if(newArr && newArr.length == MOJO_VIDEO_POST.length){
-        console.log('new array length ', newArr.length);
-        setpostslist(newArr);
-        setcurrentIndex(newIndex);
-      }      
-    }else{
-      // console.log('new index not found');
-    }    
-  }
-
-
   useEffect(()=> {
+
+    setPostForPlay(0);
     
     Font.loadAsync({
       epiloguevariable: require('../../../assets/fonts/Epilogue/Epilogue-VariableFont_wght.ttf')
@@ -85,6 +66,30 @@ const HomeScreen = (props) => {
     }
     
   }, []);
+
+
+
+  const setPostForPlay = (newIndex) => {
+    if(newIndex >= 0){
+      let newArr = MOJO_VIDEO_POST.map((item, index)=>{
+        if(index == newIndex){
+          item.play = true;
+          return item;
+        }else{
+          item.play = false;
+          return item;
+        }
+      })
+  
+      if(newArr && newArr.length == MOJO_VIDEO_POST.length){
+        console.log('new array length ', newArr.length);
+        postDispatch(newArr);
+        setcurrentIndex(newIndex);
+      }      
+    }else{
+      // console.log('new index not found');
+    }    
+  }
   
 
   return (
@@ -153,12 +158,14 @@ const mapStateToProps = (state) => {
   return {
     // userData: state.indexReducer.userData,
     pushtoken: state.indexReducer.pushtoken,
+    postslist: state.indexReducer.postsList,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     tokenDispatch: (payload) => dispatch(setPushTokenData(payload)), 
+    postDispatch: (payload) => dispatch(setPostsListData(payload)), 
   }
 }
 

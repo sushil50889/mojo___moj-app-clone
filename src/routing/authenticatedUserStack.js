@@ -28,11 +28,11 @@ function camStackScreens() {
 function authenticatedUserTabStack() {
   return (
     <Tab.Navigator initialRouteName="homepage" tabBarOptions={tabBarOption} screenOptions={({ route, navigation }) => (screenoption(navigation, route))}>
-      <Tab.Screen name="homepage" component={HomeScreen}/>
-      <Tab.Screen name="searchpage" component={SearchScreen}/>
+      <Tab.Screen name="homepage" component={HomeScreen}  options={{unmountOnBlur: true}}/>
+      <Tab.Screen name="searchpage" component={SearchScreen}  options={{unmountOnBlur: true}}/>
       <Tab.Screen name="camerapage" component={camStackScreens} options={{unmountOnBlur: true, tabBarVisible: false}}/>
-      <Tab.Screen name="notificationpage" component={NotificationScreen}/>
-      <Tab.Screen name="profilepage" component={ProfileScreen}/>
+      <Tab.Screen name="notificationpage" component={NotificationScreen}  options={{unmountOnBlur: true}}/>
+      <Tab.Screen name="profilepage" component={ProfileScreen}  options={{unmountOnBlur: true}}/>
     </Tab.Navigator>
   )
 }
