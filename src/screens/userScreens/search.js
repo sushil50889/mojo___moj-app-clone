@@ -1,22 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import normalizeFontSize from '../../config/static-data/dynamicFontSize';
 import { fonts } from '../../config/static-data/fonts';
 import { windowWidth, windowHeight } from '../../config/static-data/screenWidthHeight';
 import statusBarHeight from '../../config/statusbar/statusbar';
 import {connect} from 'react-redux';
 import { setPushTokenData, setPostsListData } from '../../config/redux-configuration/actions';
+import { carouselDummyData, trendingChannelCardImages } from '../../config/static-data/dummyData';
+import Carousel from '../../components/carousel';
+import SearchBar from '../../components/searchBar';
+import TopTrendingChannelList from '../../components/topTrendingChannelList';
 
 
 const SearchScreen = (props)=>{
 
   const {postslist, postDispatch} = props;
+  const [term, setTerm] = useState('');
 
+
+// */-----------------------------------------------------------------------------------------*/
+// */----  Calling use effect for initial data modification  ----*/
+// */-----------------------------------------------------------------------------------------*/
   useEffect(()=>{
+    // stop playing all videos
     stopPlayAllVideo();   
   }, [])
 
+
+// */-----------------------------------------------------------------------------------------*/
+// */----  stop playing all video function declaration ----*/
+// */-----------------------------------------------------------------------------------------*/
   const stopPlayAllVideo = () => {
     console.log('stop play all...');
       let newArr = postslist.map((item, index)=>{
@@ -29,9 +43,59 @@ const SearchScreen = (props)=>{
       }         
   }
 
+
+// */-----------------------------------------------------------------------------------------*/
+// */----  after search submit this function will call ----*/
+// */-----------------------------------------------------------------------------------------*/
+  function searchApi(term){
+    console.log('logging term  :  ', term);
+  }
+
+
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
+  const dataOne = shuffle(trendingChannelCardImages);
+  const dataTwo = shuffle(dataOne);
+  const dataThree = shuffle(dataTwo);
+
+
+
+// */-----------------------------------------------------------------------------------------*/
+// */----  returning the component view  ----*/
+// */-----------------------------------------------------------------------------------------*/
   return (
     <View style={styles.container}>
-      <Text>Welcome to Search Screen</Text>
+      <ScrollView>
+      <SearchBar
+        term={term}
+        onTermChange={setTerm}
+        onTermSubmit={() => searchApi(term)}
+      />
+      <Carousel data = {carouselDummyData}/>   
+      <View style={{marginTop: 20}}>  
+      <TopTrendingChannelList results={dataOne} title="Tribute To AR Rehman"/>
+      <TopTrendingChannelList results={dataTwo} title="IndVsUSA"/>
+      <TopTrendingChannelList results={dataThree} title="NewYearNewMe"/>
+      </View> 
+      </ScrollView>
     </View>
   );
 }
@@ -39,15 +103,18 @@ const SearchScreen = (props)=>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
+    // marginTop: statusBarHeight
   },
 });
 
 
 
-
+// */-----------------------------------------------------------------------------------------*/
+// */----  map redux state to props function  ----*/
+// */-----------------------------------------------------------------------------------------*/
 const mapStateToProps = (state) => {
   return {
     // userData: state.indexReducer.userData,
@@ -56,6 +123,10 @@ const mapStateToProps = (state) => {
   }
 }
 
+
+// */-----------------------------------------------------------------------------------------*/
+// */----  map dispatch functions to props  ----*/
+// */-----------------------------------------------------------------------------------------*/
 const mapDispatchToProps = (dispatch) => {
   return {
     tokenDispatch: (payload) => dispatch(setPushTokenData(payload)), 
@@ -65,3 +136,9 @@ const mapDispatchToProps = (dispatch) => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
+
+
+
+
+
+

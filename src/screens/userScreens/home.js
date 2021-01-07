@@ -5,10 +5,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import * as Font from 'expo-font';
-import Constants from 'expo-constants';
 import { windowHeight } from '../../config/static-data/screenWidthHeight';
-import statusBarHeight from '../../config/statusbar/statusbar';
-import permission from '../../config/permission/device-permissions';
 import { MOJO_VIDEO_POST } from '../../config/static-data/dummyData';
 import Post from '../../components/post';
 import { setPushTokenData, setPostsListData } from '../../config/redux-configuration/actions';

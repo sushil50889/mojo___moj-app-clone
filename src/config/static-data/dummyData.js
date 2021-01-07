@@ -203,3 +203,77 @@ export const productDetailsimages = [
     'https://static.zara.net/photos///2020/I/1/1/p/6543/610/091/2/w/2460/6543610091_2_3_1.jpg?ts=1606727896369',
     'https://static.zara.net/photos///2020/I/1/1/p/6543/610/091/2/w/2460/6543610091_2_4_1.jpg?ts=1606727898445',
 ];
+
+
+
+export const carouselDummyData = [
+        {
+                title: 'Anise Aroma Art Bazar', url: 'https://i.ibb.co/hYjK44F/anise-aroma-art-bazaar-277253.jpg',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                id: 1
+
+        },
+        {
+                title: 'Food inside a Bowl', url: 'https://i.ibb.co/JtS24qP/food-inside-bowl-1854037.jpg',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                id: 2
+        },
+        {
+                title: 'Vegatable Salad', url: 'https://i.ibb.co/JxykVBt/flat-lay-photography-of-vegetable-salad-on-plate-1640777.jpg',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                id: 3
+        }
+];
+
+
+
+
+export const trendingChannelCardImages = [
+    {
+        id: '1',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/e7b99e4c-ce2e-45ce-8fbe-efdd8751d656-e9d6f399-5948-42ef-9122-2c1b9b32cde9_1_o0qjxb.jpg'
+    },
+    {
+        id: '2',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/images_1_uskkva.jpg'
+    },
+    {
+        id: '3',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/unnamed_dy3hge.jpg'
+    },
+    {
+        id: '4',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/e19ae5f5-739e-4ecf-a030-0bdaef243685-02de20ec-fcb1-48b4-8619-b7b50a17a913_compressed_thumb_ai3xwh.jpg'
+    },
+    {
+        id: '5',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/images_cs7ssg.jpg'
+    },
+    {
+        id: '6',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/6e4849f6a74e78713c57974b7ef5db83_ydnaxf.jpg'
+    },
+    {
+        id: '7',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/unnamed_bw3l65.png'
+    },
+    {
+        id: '8',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/f285ec7c251e03cef86b237571f4006a_oyy0cu.jpg'
+    },
+    {
+        id: '9',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/a4704a867b9048c0f05ce5c1a671402f_wypujd.jpg'
+    },
+    {
+        id: '10',
+        image_url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/51203f86-d313-4a0c-906d-96361761d60d-2feae9d8-56b9-4053-98ba-1b2cfe19e056_compressed_thumb_gedptu.jpg'
+    },
+];
+
+
+
+
+// */-----------------------------------------------------------------------------------------*/
+// */-----------------------------------------------------------------------------------------*/
+// */-----------------------------------------------------------------------------------------*/
