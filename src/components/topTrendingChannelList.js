@@ -9,6 +9,7 @@ import {
 import { windowWidth } from '../config/static-data/screenWidthHeight';
 import TopTrendingChannelListCard from './topTrendingChannelListCard';
 import { Feather } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'; 
 
 const TopTrendingChannelList = ({ title, results, navigation }) => {
   if (!results.length) {
@@ -21,8 +22,11 @@ const TopTrendingChannelList = ({ title, results, navigation }) => {
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-start', flexDirection: 'row'}}>
             <Feather name="hash" size={24} color="#a1a1a1" style={{paddingHorizontal: 8, paddingVertical: 5, borderWidth: 1, borderColor: "#a1a1a1", borderRadius: 6, backgroundColor: '#25232d', }}/>
             <Text style={[styles.title]}>{title}</Text>
-        </View>           
-        <Text style={styles.views}>37.2M</Text>
+        </View> 
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row'}}>            
+            <Text style={styles.views}>37.2M</Text>
+            <AntDesign name="right" size={14} color='#a1a1a1' style={{paddingLeft: 10}}/>
+        </View>       
       </View>  
       
       <FlatList
@@ -55,7 +59,7 @@ const styles = StyleSheet.create({
   views: {
     fontSize: 12,
     fontWeight: 'bold',
-    marginBottom: 5,
+    // marginBottom: 5,
     color: '#a1a1a1',
     // backgroundColor: 'green',
     textAlignVertical: 'center'

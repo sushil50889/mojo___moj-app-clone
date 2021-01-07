@@ -208,20 +208,25 @@ export const productDetailsimages = [
 
 export const carouselDummyData = [
         {
-                title: 'Anise Aroma Art Bazar', url: 'https://i.ibb.co/hYjK44F/anise-aroma-art-bazaar-277253.jpg',
+                title: 'Anise Aroma Art Bazar', url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610006901/moj-app-banner/unnamed_2_udsab6.jpg',
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                id: 1
+                id: '1'
 
         },
         {
-                title: 'Food inside a Bowl', url: 'https://i.ibb.co/JtS24qP/food-inside-bowl-1854037.jpg',
+                title: 'Food inside a Bowl', url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610006901/moj-app-banner/maxresdefault_dg9jgw.jpg',
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                id: 2
+                id: '2'
         },
         {
-                title: 'Vegatable Salad', url: 'https://i.ibb.co/JxykVBt/flat-lay-photography-of-vegetable-salad-on-plate-1640777.jpg',
+                title: 'Vegatable Salad', url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610006901/moj-app-banner/maxresdefault_1_ws09b9.jpg',
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                id: 3
+                id: '3'
+        },
+        {
+                title: 'Vegatable Salad', url: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610006901/moj-app-banner/moj-24415-1200x675_qc2e5j.jpg',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                id: '4'
         }
 ];
 

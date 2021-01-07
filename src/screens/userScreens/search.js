@@ -72,9 +72,9 @@ const SearchScreen = (props)=>{
     return array;
   }
 
-  const dataOne = shuffle(trendingChannelCardImages);
-  const dataTwo = shuffle(dataOne);
-  const dataThree = shuffle(dataTwo);
+  const dataOne = trendingChannelCardImages.sort( () => Math.random() - 0.5);
+  const dataTwo = dataOne.sort( () => Math.random() - 0.5);
+  const dataThree = dataTwo.sort( () => Math.random() - 0.5);
 
 
 
