@@ -1,19 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList, LogBox } from 'react-native';
 import normalizeFontSize from '../../config/static-data/dynamicFontSize';
 import { fonts } from '../../config/static-data/fonts';
 import { windowWidth, windowHeight } from '../../config/static-data/screenWidthHeight';
 import statusBarHeight from '../../config/statusbar/statusbar';
 import {connect} from 'react-redux';
 import { setPushTokenData, setPostsListData } from '../../config/redux-configuration/actions';
+import NotificationHeader from '../../components/notificationHeader';
+import NotificationList from '../../components/notificationList';
+import { notificationDummyData } from '../../config/static-data/dummyData';
+
 
 const NotificationScreen = (props)=> {
 
   const {postslist, postDispatch} = props;
 
   useEffect(()=>{
-    stopPlayAllVideo();   
+    stopPlayAllVideo(); 
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);  
   }, [])
 
   const stopPlayAllVideo = () => {
@@ -31,7 +36,10 @@ const NotificationScreen = (props)=> {
 
   return (
     <View style={styles.container}>
-      <Text>Welcome to Notification Screen</Text>
+      <NotificationHeader/>
+      <ScrollView>   
+        <NotificationList notiData={notificationDummyData}/>     
+      </ScrollView>      
     </View>
   );
 }
@@ -39,9 +47,9 @@ const NotificationScreen = (props)=> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
 

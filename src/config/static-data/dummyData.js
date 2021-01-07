@@ -279,6 +279,126 @@ export const trendingChannelCardImages = [
 
 
 
+export const notificationDummyData = [
+    {
+        id: '1',
+        date: 'Yesterday',
+        data: [
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Shaw your skills !!',
+                weekday: 'Wednesday',
+                time: '09:19 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/images_1_uskkva.jpg',
+                id: '1'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Happy Birthday Maestro',
+                weekday: 'Wednesday',
+                time: '08:50 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/unnamed_dy3hge.jpg',
+                id: '2'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Trending nowww !',
+                weekday: 'Wednesday',
+                time: '07:20 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/images_cs7ssg.jpg',
+                id: '3'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Show us your cool outfits !!',
+                weekday: 'Wednesday',
+                time: '02:35 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/e7b99e4c-ce2e-45ce-8fbe-efdd8751d656-e9d6f399-5948-42ef-9122-2c1b9b32cde9_1_o0qjxb.jpg',
+                id: '4'
+            },
+        ]
+    },
+    {
+        id: '2',
+        date: '05-01-2021',
+        data: [
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Shaw your skills !!',
+                weekday: 'Wednesday',
+                time: '09:19 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/e19ae5f5-739e-4ecf-a030-0bdaef243685-02de20ec-fcb1-48b4-8619-b7b50a17a913_compressed_thumb_ai3xwh.jpg',
+                id: '1'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Happy Birthday Maestro',
+                weekday: 'Wednesday',
+                time: '08:50 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/6e4849f6a74e78713c57974b7ef5db83_ydnaxf.jpg',
+                id: '2'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Trending nowww !',
+                weekday: 'Wednesday',
+                time: '07:20 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/unnamed_bw3l65.png',
+                id: '3'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Show us your cool outfits !!',
+                weekday: 'Wednesday',
+                time: '02:35 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/a4704a867b9048c0f05ce5c1a671402f_wypujd.jpg',
+                id: '4'
+            },
+        ]
+    },
+    {
+        id: '3',
+        date: '01-01-2021',
+        data: [
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Shaw your skills !!',
+                weekday: 'Wednesday',
+                time: '09:19 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/unnamed_1_ejlbhv.jpg',
+                id: '1'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Happy Birthday Maestro',
+                weekday: 'Wednesday',
+                time: '08:50 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/f285ec7c251e03cef86b237571f4006a_oyy0cu.jpg',
+                id: '2'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Trending nowww !',
+                weekday: 'Wednesday',
+                time: '07:20 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939368/topChannelImages/51203f86-d313-4a0c-906d-96361761d60d-2feae9d8-56b9-4053-98ba-1b2cfe19e056_compressed_thumb_gedptu.jpg',
+                id: '3'
+            },
+            {
+                logo: 'https://res.cloudinary.com/sushilmandi/image/upload/v1610017997/unnamed_1_wbbkyt.png',
+                title: 'Show us your cool outfits !!',
+                weekday: 'Wednesday',
+                time: '02:35 PM',
+                image: 'https://res.cloudinary.com/sushilmandi/image/upload/v1609939369/topChannelImages/images_1_uskkva.jpg',
+                id: '4'
+            },
+        ]
+    }
+];
+
+
+
+
 // */-----------------------------------------------------------------------------------------*/
 // */-----------------------------------------------------------------------------------------*/
 // */-----------------------------------------------------------------------------------------*/
