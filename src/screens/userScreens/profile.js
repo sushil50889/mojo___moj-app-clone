@@ -7,6 +7,11 @@ import { windowWidth, windowHeight } from '../../config/static-data/screenWidthH
 import statusBarHeight from '../../config/statusbar/statusbar';
 import {connect} from 'react-redux';
 import { setPushTokenData, setPostsListData } from '../../config/redux-configuration/actions';
+import ProfilePageHeader from '../../components/profilePageHeader';
+import ProfilePageUserInfo from '../../components/profile/profilePageUserInfo';
+import ProfilePageUserBio from '../../components/profile/profilePageUserBio';
+import { ButtonTypeTwo } from '../../components/buttons/button';
+import ProfilePageTabView from '../../components/profile/profilePageTabView';
 
 
 
@@ -30,9 +35,21 @@ const ProfileScreen = (props) => {
       }         
   }
 
+  const onEditProfilePress = ()=>{
+    console.log('on Edit Profile Press');
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Welcome to Profile Screen</Text>
+      <ProfilePageHeader/>
+      <ProfilePageUserInfo/>
+      <ProfilePageUserBio/>
+      <View style={{paddingHorizontal: 15}}>
+        <ButtonTypeTwo text={'Edit Profile'} onpress={onEditProfilePress} buttonstyle={styles.editBtn} buttonTextStyle={styles.editBtnText}/>
+      </View> 
+      <View style={{flex: 1}}>
+        <ProfilePageTabView/>
+      </View>     
     </View>
   );
 }
@@ -40,10 +57,22 @@ const ProfileScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000',
   },
+  editBtn: {
+    height: windowHeight * 0.05,
+    borderRadius: 10,  
+    backgroundColor: "#333236",
+  },
+  editBtnText: {
+    color: 'white',
+    flex: 1,
+    // textTransform: 'uppercase',
+    fontSize: 14,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    // fontFamily: fonts.epiloguevariable
+}
 });
 
 

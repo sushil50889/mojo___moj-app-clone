@@ -5,13 +5,13 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 
 
 
-export default function NotificationHeader() {
+export default function ProfilePageHeader() {
   return (
     <View style={styles.container}>
-      <Text style={{color: '#e8e8e8', textAlignVertical: 'center', fontSize: 24}}>Notifications</Text>
-      <SimpleLineIcons name="options-vertical" size={24} color="#e8e8e8" style={{color: '#e8e8e8', textAlignVertical: 'center'}}/>
+      {/* <Text style={{color: '#e8e8e8', textAlignVertical: 'center', fontSize: 24}}>Notifications</Text> */}
+      <SimpleLineIcons name="options-vertical" size={24} color="#e8e8e8" style={{color: '#e8e8e8', textAlignVertical: 'center', }}/>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     height: windowHeight*0.08,
     justifyContent: 'center',
     flexDirection: 'row', 
-    justifyContent: 'space-between', 
+    justifyContent: 'flex-end', 
     paddingHorizontal: 15
   }
 });

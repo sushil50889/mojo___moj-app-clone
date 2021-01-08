@@ -42,8 +42,7 @@ const styles = StyleSheet.create({
     height: windowHeight*0.1,
     paddingLeft: 10,
     flexDirection: 'row'
-  },
-  
+  }  
 });
 
 export default NotificationCard;

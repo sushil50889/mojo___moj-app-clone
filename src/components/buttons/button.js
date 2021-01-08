@@ -1,14 +1,9 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
-import { fonts } from '../helpers/static-data/fonts';
-import { windowWidth, windowHeight } from '../helpers/static-data/screenWidthHeight';
+import { windowWidth, windowHeight } from '../../config/static-data/screenWidthHeight';
+
 
 export function ButtonTypeOne({text, onpress}) {
-
-    // const backgroundColor = {
-    //     backgroundColor: backColor
-    // }
-
     return (
         <TouchableOpacity onPress={onpress} style={styles.buttonTouchOpacity}>
             <View style={styles.button}>
@@ -18,14 +13,11 @@ export function ButtonTypeOne({text, onpress}) {
     )
 }
 
-export function ButtonTypeTwo({text, onpress, buttonstyle}) {
-
-    // console.log('sdfsdfs sdfs fsdfsdf', buttonstyle);
-
+export function ButtonTypeTwo({text, onpress, buttonstyle, buttonTextStyle}) {
     return (
-        <TouchableOpacity onPress={onpress} style={[{ width: '100%', marginTop: 0 }]}>
-            <View style={[styles.button2, {height: windowHeight * 0.07}, buttonstyle]}>
-                <Text style={styles.buttonText2}>{text}</Text>
+        <TouchableOpacity onPress={onpress} style={[{ width: '100%' }]}>
+            <View style={[buttonstyle]}>
+                <Text style={buttonTextStyle}>{text}</Text>
             </View>
         </TouchableOpacity>
     )
